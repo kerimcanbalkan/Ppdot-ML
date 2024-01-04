@@ -7,15 +7,15 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
 # Load your data
-data = pd.read_csv("data/data2.csv")
+data = pd.read_csv("data/data1.csv")
 
 # Separate features (P0, P1) and labels (Type)
-X = data[["P0", "P1"]]
-y = data["Type"]
+X = data[["P0", "P1", "BSURF"]]
+y = data["TYPE"]
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.6, random_state=42
+    X, y, test_size=0.3, random_state=42
 )
 
 # Standardize the features
@@ -23,16 +23,8 @@ scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
-# Use the best hyperparameters from the grid search
-params = {
-    "n_estimators": 50,
-    "max_depth": None,
-    "min_samples_split": 5,
-    "min_samples_leaf": 2,
-}
-
-# Create a Random Forest classifier with the best hyperparameters
-clf = RandomForestClassifier(random_state=42, **params)
+# Create a Random Forest classifier
+clf = RandomForestClassifier(random_state=42)
 
 # Fit the model on the training data
 clf.fit(X_train_scaled, y_train)
@@ -44,8 +36,8 @@ y_pred = clf.predict(X_test_scaled)
 accuracy = accuracy_score(y_test, y_pred)
 print(f"Accuracy: {accuracy:.2f}")
 
-# Display additional metrics with zero_division='warn'
-print(classification_report(y_test, y_pred, zero_division="warn"))
+# Display additional metrics
+print(classification_report(y_test, y_pred))
 
 
 # Function to plot data with logarithmic scales and consistent colors for each type
@@ -70,6 +62,7 @@ def plot_data(X, y, title, colors=None):
 
     plt.legend()
     plt.show()
+    plt.savefig(f"{title}.png")
 
 
 # Plot the original data
