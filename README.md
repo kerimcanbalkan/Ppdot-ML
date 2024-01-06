@@ -9,6 +9,15 @@ using the Random Forest algorithm, a machine learning technique.</p>
 <p>The dataset used in this project is obtained from the ATNF Pulsar Catalogue, containing information about pulsars'
 P0, P1, TYPE, and BSURF parameters.</p>
 
+<h3>Classes</h3>
+
+<p><strong>AXP:</strong> Anomalous X-ray Pulsar or Soft Gamma-ray Repeater with detected pulsations</p>
+<p><strong>HE:</strong> Spin-powered pulsar with pulsed emission from radio to infrared or higher frequencies</p>
+<p><strong>NRAD:</strong> Spin-powered pulsar with pulsed emission only at infrared or higher frequencies</p>
+<p><strong>RRAT:</strong> Pulsars with intermittently pulsed radio emission</p>
+<p><strong>XINS:</strong> Isolated neutron stars with pulsed thermal X-ray emission but no detectable radio emission</p>
+
+
 <h2>Requirements</h2>
 <ul>
         <li>Python 3.x</li>
