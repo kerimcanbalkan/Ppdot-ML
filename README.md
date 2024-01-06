@@ -1,7 +1,7 @@
 <h1>Pulsar Type Classification using Random Forest</h1>
 <h2>Overview</h2>
-<p>This project aims to classify pulsars into different types based on their characteristic features, specifically the
-pulse period (P0), period derivative (P1), and surface magnetic field (BSURF). The classification is performed
+<p>This project aims to classify pulsars into different types based on their characteristic features, specifically the 
+Pulse period (P0), Period derivative (P1), and Surface Magnetic Field (BSURF). The classification is performed
 using the Random Forest algorithm, a machine learning technique.</p>
 
 <h2>Dataset</h2>
