@@ -61,7 +61,6 @@ def plot_data(X, y, title, colors=None):
         )
 
     plt.legend()
-    plt.show()
     plt.savefig(f"{title}.png")
 
 
