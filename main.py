@@ -6,10 +6,10 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
-# Load your data
+# Load the data
 data = pd.read_csv("data/data1.csv")
 
-# Separate features (P0, P1) and labels (Type)
+# Separate features and labels
 X = data[["P0", "P1", "BSURF"]]
 y = data["TYPE"]
 
@@ -40,7 +40,7 @@ print(f"Accuracy: {accuracy:.2f}")
 print(classification_report(y_test, y_pred))
 
 
-# Function to plot data with logarithmic scales and consistent colors for each type
+# Function to plot data
 def plot_data(X, y, title, colors=None):
     types = np.unique(y)
     if colors is None:
@@ -61,7 +61,7 @@ def plot_data(X, y, title, colors=None):
         )
 
     plt.legend()
-    plt.savefig(f"{title}.png")
+    plt.show()
 
 
 # Plot the original data
